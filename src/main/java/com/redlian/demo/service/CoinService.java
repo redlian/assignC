@@ -38,6 +38,7 @@ public class CoinService {
 		final Currency cur = new Currency();
 		cur.setName("比利時法郎");
 		cur.setCoinCode("BEF");
+		cur.setLMD(DateUtils.formatDate(new Date(), "yyyy/MM/dd HH:mm:ss"));
 		return this.currencydao.save(cur);
 	}
 
