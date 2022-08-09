@@ -10,17 +10,18 @@
 				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} | ${app.name} |- %msg%n"
 				charset="UTF-8" />
 		</Console>
-		<RollingFile name="demo-Log"
+		<RollingFile name="demoAp"
 			fileName="${log.path}/demo.log"
-			filePattern="${log.path}/demo-%d{yyyyMMdd}-%i.log">
+			filePattern="${log.path}/demoAp-%d{yyyyMMdd}-%i.log">
 			<PatternLayout alwaysWriteExceptions="false"
-				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} | ${app.name} |- %msg%n"
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L | ${app.name} |- %msg%n"
 				charset="UTF-8" />
 			<Policies>
-				<SizeBasedTriggeringPolicy size="30 MB" />
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10MB" />
 			</Policies>
 			<DefaultRolloverStrategy max="2000">
-				<Delete basePath="${log.path}/" maxDepth="3">
+				<Delete basePath="${log.path}/" maxDepth="10">
 					<IfFileName glob="**.log" />
 					<IfLastModified age="7d" />
 				</Delete>
@@ -31,7 +32,7 @@
 		<Logger name="com.redlian.demo" level="TRACE" />
 		<Root level="INFO">
 			<AppenderRef ref="Console" />
-			<AppenderRef ref="demo-Log" />
+			<AppenderRef ref="demoAp" />
 		</Root>
 	</Loggers>
 </Configuration>
