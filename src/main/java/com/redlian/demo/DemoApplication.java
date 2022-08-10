@@ -11,7 +11,7 @@ public class DemoApplication {
 
     @RequestMapping("/")
     public String hel() {
-        return "demo iis";
+        return "demo";
     }
 
     public static void main(final String[] args) {
