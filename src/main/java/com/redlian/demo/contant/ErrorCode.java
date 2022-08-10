@@ -6,10 +6,6 @@
  */
 package com.redlian.demo.contant;
 
-/**
- * @author 1710009
- *
- */
 public enum ErrorCode {
     CONNEC_ERROR("9998", "Connection Error"), RESPONSE_ERROR("9999", "Response Error");
 
