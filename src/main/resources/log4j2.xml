@@ -6,9 +6,7 @@
 	</Properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout
-				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} | ${app.name} |- %msg%n"
-				charset="UTF-8" />
+			<PatternLayout  pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} | ${app.name} |- %msg%n"  charset="UTF-8" />
 		</Console>
 		<RollingFile name="demoAp" fileName="${log.path}/demo.log" filePattern="${log.path}/demoAp-%d{yyyyMMdd}-%i.log">
 			<PatternLayout alwaysWriteExceptions="false" pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L | ${app.name} |- %msg%n" charset="UTF-8" />
