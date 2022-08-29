@@ -253,6 +253,7 @@ public class CoinController {
 		return new ResponseEntity<User>(u, HttpStatus.OK);
 	}
 
+	// localhost:8080/api/coin/testapi?userName=???&time=???
 	@GetMapping("/testapi")
 	public ResponseEntity<User> getUserApi(@RequestParam(value = "userName", defaultValue = "") final String name,
 			@RequestParam(value = "time", defaultValue = "") final String time) {
