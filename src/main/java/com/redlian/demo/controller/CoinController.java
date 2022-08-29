@@ -245,7 +245,8 @@ public class CoinController {
 		return res;
 	}
 
-	@GetMapping("/test/{name}")
+	// Optional by using required attribute
+	@GetMapping("test","/test/{name}")
 	public ResponseEntity<User> getTest(@PathVariable("name") final String name) {
 		final User u = new User();
 		u.setId("00");
