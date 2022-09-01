@@ -73,7 +73,7 @@ public class CoinController {
 	@Autowired
 	private CoinService coinservice;
 
-	@GetMapping("queryall")
+	@GetMapping(value = { "findall", "queryall" })
 	public List<Currency> listAll() {
 		return this.coinservice.findAll();
 	}
@@ -246,8 +246,8 @@ public class CoinController {
 	}
 
 	// Optional by using required attribute
-	@GetMapping("test","/test/{name}")
-	public ResponseEntity<User> getTest(@PathVariable("name") final String name) {
+	@GetMapping(value = { "/test/{name}" })
+	public ResponseEntity<User> getTest(@PathVariable("name") String name) {
 		final User u = new User();
 		u.setId("00");
 		u.setName(name);
