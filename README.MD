@@ -14,5 +14,5 @@ ex: curl -X GET localhost:8081/api/coin/add -data '{"name":"元元","coin_code":
 
 ## run h2 database
 java -cp h2-2.1.214.jar org.h2.tools.Server  
-> port default 8082 
-> -tcpPort {port}
+> port default 8082   
+> change port `-tcpPort {port}`
